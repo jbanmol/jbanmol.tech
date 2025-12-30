@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Home, User, Briefcase, Lightbulb, Code, Phone, Moon, Sun, Github, Linkedin, Mail, Search, X, GraduationCap, MousePointerClick } from 'lucide-react';
+import { Home, User, Briefcase, Lightbulb, FlaskConical, Compass as CompassIcon, Phone, Moon, Sun, Github, Linkedin, Mail, Search, X, GraduationCap, MousePointerClick } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
 
 interface CommandPaletteProps {
@@ -21,7 +21,8 @@ const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, setIsOpen, isCu
     { name: 'Go to About', section: 'Navigation', icon: User, action: () => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }) },
     { name: 'Go to Experience', section: 'Navigation', icon: Briefcase, action: () => document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' }) },
     { name: 'Go to Skills', section: 'Navigation', icon: Lightbulb, action: () => document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' }) },
-    { name: 'Go to Projects', section: 'Navigation', icon: Code, action: () => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }) },
+    { name: 'Go to The Lab', section: 'Navigation', icon: FlaskConical, action: () => document.getElementById('lab')?.scrollIntoView({ behavior: 'smooth' }) },
+    { name: 'Go to The Compass', section: 'Navigation', icon: CompassIcon, action: () => document.getElementById('compass')?.scrollIntoView({ behavior: 'smooth' }) },
     { name: 'Go to Contact', section: 'Navigation', icon: Phone, action: () => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) },
     { name: 'Toggle Theme', section: 'Actions', icon: theme === 'dark' ? Sun : Moon, action: toggleTheme },
     { name: `Toggle Cursor Effect (${isCursorEnabled ? 'On' : 'Off'})`, section: 'Actions', icon: MousePointerClick, action: toggleCursor },

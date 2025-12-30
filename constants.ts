@@ -89,11 +89,29 @@ export const skills: Skill[] = [
 
 export const RESUME_DATA_FOR_AI = `
 Name: Jb Anmol
-Role: Data Scientist
-Summary: A Data Scientist passionate about leveraging AI to unlock human potential, especially in medical sciences. Known for strong stakeholder communication skills and translating complex data into actionable insights. Combines hands-on experience in the full data lifecycle with a leadership background and a keen interest in clinical time series analysis.
+Tagline: "Architecting Intelligence, Cultivating Consciousness"
+Role: Data Scientist & Breath Engineer
+Location: Currently in Bangalore, India
+
+Summary: A Data Scientist who bridges technical rigor with contemplative practice. Passionate about leveraging AI to unlock human potential, especially in medical sciences and healthcare. Known for strong stakeholder communication skills, translating complex data into actionable insights, and bringing a mindful, disciplined approach to problem-solving. Combines hands-on experience in the full data lifecycle with a deep interest in clinical time series analysis, AGI safety, and human-AI collaboration.
+
 Education: BS in Data Science & Programming from IIT Madras (2023-2026), Current CGPA: 9.1.
+
 Experience:
-- Data Scientist (Part-time) at Kidaura (Mar 2025 - Current): Developed ETL pipelines (Python), built ML models (scikit-learn) with 95% accuracy, performed data analysis for clinical stakeholders.
-- Founder's Office - Analytics & Partnerships at Tummo Labs (Jun 2024 - Oct 2024): Worked directly with the founding team to lead launch analytics for 47k+ users, designed A/B tests improving retention by 25%, and created dashboards to drive stakeholder alignment.
-- Administrator at Shloka (May 2023 - Dec 2023): Improved data collection with 98% data integrity, analyzed engagement metrics with SQL.
+- Data Scientist (Part-time) at Kidaura (Mar 2025 - Current): Developed ETL pipelines (Python) reducing processing time by 30%, built ML models (scikit-learn) with 95% accuracy and 25% error reduction, performed anomaly detection and custom analysis for clinical stakeholders working with neuro-diverse children.
+- Founder's Office - Analytics & Partnerships at Tummo Labs (Jun 2024 - Oct 2024): Worked directly with the founding team to lead launch analytics for 47k+ users in 3 months, designed and interpreted A/B tests improving retention by 25%, created dashboards for cross-functional data-driven decision making.
+- Administrator at Shloka (May 2023 - Dec 2023): Improved data collection achieving 98% data integrity across 50+ groups, analyzed engagement metrics with SQL to create stakeholder reports.
+
+Technical Skills: Python, SQL, PostgreSQL, scikit-learn, Pandas & NumPy, ETL Pipelines, Statistical Modeling, A/B Testing, Flask, FastAPI, Hugging Face, LangChain, Docker, S3 (AWS), Feature Engineering, Git, Bash, RAG, Tableau, Power BI, Google Workspace, Vue3, OpenAI, Claude.
+
+Spiritual & Philosophical Practices:
+- Hatha Yoga: Daily practice focused on pranayama (breath work), embodied discipline, and mind-body integration. Described as a "breath engineer."
+- Vedic Astrology: Studies pattern recognition in cosmic cycles and human behavior.
+- Buddhist Mindfulness: Cultivates present-moment awareness, compassionate observation, and non-attachment.
+- Stoic Philosophy: Practices rational clarity, acceptance, and virtuous action.
+- Japandi Aesthetics: Design philosophy rooted in minimalism, warmth, intentional negative space, and contemplative simplicity.
+
+Research Interests: AGI safety, consciousness research, clinical time series analysis, human-AI collaboration, ethical ML in healthcare, systems thinking, open source values.
+
+Personal Philosophy: Building technology that serves human flourishing. Interested in roles and collaborations that honor both technical excellence and human impact. Approaches work with calm energy, curiosity, and high-agency problem-solving.
 `;

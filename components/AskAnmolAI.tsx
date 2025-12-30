@@ -6,7 +6,7 @@ import type { Message } from '../types';
 import { Bot, User, Send, Cpu, Search, BrainCircuit, ThumbsUp, ThumbsDown, Trash2, Link, Sparkles } from 'lucide-react';
 
 const SectionTitle: React.FC<{ children: React.ReactNode, id: string }> = ({ children, id }) => (
-    <h2 id={id} className="text-3xl md:text-4xl font-bold text-center text-[var(--text)] mb-4 tracking-tight">{children}</h2>
+    <h2 id={id} className="font-display text-4xl md:text-5xl font-bold text-center text-[var(--text)] mb-4 tracking-tight">{children}</h2>
 );
 
 const FeedbackModal: React.FC<{ rating: 'up' | 'down'; onSend: (text: string) => void; onCancel: () => void; }> = ({ rating, onSend, onCancel }) => {

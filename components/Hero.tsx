@@ -16,7 +16,6 @@ const Typewriter: React.FC<{ words: string[] }> = ({ words }) => {
       setText(updatedText);
 
       if (!isDeleting && updatedText === currentWord) {
-        // Pause longer after typing a line
         setTimeout(() => setIsDeleting(true), 2000);
       } else if (isDeleting && updatedText === '') {
         setIsDeleting(false);
@@ -44,11 +43,11 @@ const Typewriter: React.FC<{ words: string[] }> = ({ words }) => {
 
 const Hero: React.FC = () => {
   return (
-    <div className="text-center flex flex-col items-center">
-        <div className="mb-4">
+    <div className="text-center flex flex-col items-center relative z-10">
+        <div className="mb-6">
             <div 
               className="p-1 rounded-full bg-gradient-accent" 
-              style={{ boxShadow: '0 0 20px var(--shadow-color)'}}
+              style={{ boxShadow: '0 0 24px var(--shadow-color)'}}
               onMouseEnter={() => document.body.classList.add('cursor-hidden-by-hover')}
               onMouseLeave={() => document.body.classList.remove('cursor-hidden-by-hover')}
             >
@@ -60,24 +59,46 @@ const Hero: React.FC = () => {
         />
             </div>
         </div>
-        <div className="mb-6 text-center">
-            <p className="text-xl font-medium text-[var(--text)] tracking-wide">
-                Data Scientist <span className="text-[var(--muted)] mx-1">|</span> AI Enthusiast
+        
+        <div className="mb-3 text-center">
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-[var(--text)] mb-2 tracking-tight">
+                Jb Anmol
+            </h1>
+            <p className="text-lg font-medium text-[var(--muted)] tracking-wide mb-4">
+                Data Scientist <span className="mx-2">•</span> Breath Engineer
             </p>
         </div>
-        <div className="flex items-center justify-center mb-6">
+
+        <div className="mb-6 max-w-2xl px-4">
+            <p className="font-serif text-2xl md:text-3xl font-semibold text-[var(--accent-tertiary)] leading-relaxed mb-4">
+                Architecting Intelligence, Cultivating Consciousness
+            </p>
+            <p className="text-base text-[var(--muted)] max-w-xl mx-auto leading-relaxed">
+                Where rigorous data science meets mindful practice. Building human-centered AI systems
+                while exploring the intersection of technology, wellness, and ancient wisdom.
+            </p>
+        </div>
+
+        <div className="flex items-center justify-center mb-6 text-sm text-[var(--muted)] gap-2">
+            <span className="inline-block w-2 h-2 rounded-full bg-[var(--accent-secondary)] animate-pulse"></span>
+            <span className="font-code">Currently in Bangalore, India</span>
+        </div>
+
+        <div className="flex items-center justify-center mb-8 gap-4">
             <Typewriter words={[
-                "Hi, I’m Anmol() 👋",
-                "Python 🐍 and caffeine ☕",
-                "debugs life with yoga 🐛🔧",
-                "build things that don’t break (much) 🏗️😅",
+                "Hi, I'm Anmol() 👋",
+                "Python 🐍 and pranayama 🧘",
+                "debugs code with mindfulness 🐛✨",
+                "builds systems that heal 🏥💚",
+                "where ML meets meditation 🤖🕉️",
             ]} />
         </div>
+
         <a 
-            href="#projects" 
-            className="group inline-flex items-center justify-center gap-2.5 px-8 py-2.5 font-semibold text-base rounded-full bg-transparent border text-[var(--accent-primary)] border-[var(--accent-primary)] transition-all duration-300 ease-in-out hover:bg-gradient-accent hover:text-[var(--text-on-accent)] hover:border-transparent hover:shadow-[0_0_25px_-5px_var(--glow-color)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--accent-primary)] focus-visible:ring-offset-[var(--bg)]"
+            href="#lab" 
+            className="group inline-flex items-center justify-center gap-2.5 px-8 py-3 font-semibold text-base rounded-full bg-transparent border-2 text-[var(--accent-primary)] border-[var(--accent-primary)] transition-all duration-300 ease-in-out hover:bg-[var(--accent-primary)] hover:text-[var(--text-on-accent)] hover:border-[var(--accent-primary)] hover:shadow-[0_0_20px_-5px_var(--glow-color)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--accent-primary)] focus-visible:ring-offset-[var(--bg)]"
         >
-            View My Work
+            Explore The Lab
             <ArrowDown className="w-5 h-5 transition-transform duration-300 group-hover:translate-y-0.5" />
         </a>
     </div>

@@ -4,7 +4,7 @@ import type { Experience as ExperienceType } from '../types';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 const SectionTitle: React.FC<{ children: React.ReactNode, id: string }> = ({ children, id }) => (
-    <h2 id={id} className="text-3xl md:text-4xl font-bold text-center text-[var(--text)] mb-16 tracking-tight">{children}</h2>
+    <h2 id={id} className="font-display text-4xl md:text-5xl font-bold text-center text-[var(--text)] mb-16 tracking-tight">{children}</h2>
 );
 
 const TimelineItem: React.FC<{ experience: ExperienceType; index: number }> = ({ experience, index }) => {
@@ -19,21 +19,22 @@ const TimelineItem: React.FC<{ experience: ExperienceType; index: number }> = ({
             {/* Card */}
             <div className={`w-full md:w-1/2 ${isLeft ? 'md:pr-8' : 'md:pl-8'}`}>
                 <div
-                    className={`interactive-card bg-glass p-6 rounded-lg border backdrop-blur-sm ${animationClass} ${isVisible ? 'is-visible' : ''}`}
+                    className={`interactive-card bg-[var(--surface)] p-8 rounded-lg border backdrop-blur-sm ${animationClass} ${isVisible ? 'is-visible' : ''}`}
                     style={{ borderColor: 'var(--border)', transitionDelay: `${index * 100}ms` }}
                 >
                     <time 
-                        className="text-xs font-semibold uppercase inline-block mb-2 px-2 py-1 rounded-full"
+                        className="text-xs font-semibold uppercase inline-block mb-3 px-3 py-1 rounded-full font-code"
                         style={{
                             color: 'var(--accent-primary)',
-                            backgroundColor: 'rgba(var(--accent-primary-rgb), 0.1)'
+                            backgroundColor: 'rgba(var(--accent-primary-rgb), 0.1)',
+                            border: '1px solid rgba(var(--accent-primary-rgb), 0.2)'
                         }}
                     >
                         {experience.period}
                     </time>
-                    <h3 className="text-xl font-bold text-[var(--text)]">{experience.role}</h3>
-                    <p className="text-[var(--muted)] mb-4">{experience.company}</p>
-                    <ul className="list-disc list-inside text-[var(--muted)] space-y-2 text-sm">
+                    <h3 className="font-serif text-xl font-bold text-[var(--text)] mb-1">{experience.role}</h3>
+                    <p className="text-[var(--accent-secondary)] font-medium mb-4">{experience.company}</p>
+                    <ul className="list-disc list-inside text-[var(--muted)] space-y-2 text-sm leading-relaxed">
                         {experience.points.map((point, i) => (
                             <li key={i}>{point}</li>
                         ))}
