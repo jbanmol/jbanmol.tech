@@ -53,7 +53,9 @@ const ProjectCard: React.FC<{ project: LabProject }> = ({ project }) => {
         <div className="p-6 flex-grow">
             <div className="flex items-start gap-3 mb-4">
                 <div className="p-2 rounded-lg" style={{ backgroundColor: 'rgba(var(--accent-primary-rgb), 0.1)' }}>
-                    <StatusIcon size={20} style={{ color: statusConfig[status].color }} />
+                    <div style={{ color: statusConfig[status].color }}>
+                        <StatusIcon size={20} />
+                    </div>
                 </div>
                 <div className="flex-1">
                     <h3 className="text-xl font-bold text-[var(--text)] mb-1 font-serif">{project.title}</h3>
