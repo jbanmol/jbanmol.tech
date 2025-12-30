@@ -4,7 +4,8 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
-import Projects from './components/Projects';
+import TheLab from './components/TheLab';
+import Compass from './components/Compass';
 import AskAnmolAI from './components/AskAnmolAI';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
@@ -34,7 +35,7 @@ function App() {
 
   useEffect(() => {
     if (selectedSkill) {
-      document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('lab')?.scrollIntoView({ behavior: 'smooth' });
     }
   }, [selectedSkill]);
   
@@ -52,7 +53,7 @@ function App() {
         <div id="home" className="h-screen min-h-[700px] flex items-center justify-center">
           <Hero />
         </div>
-        <div className="space-y-32 md:space-y-40 py-24">
+        <div className="space-y-40 md:space-y-48 py-32">
           <div id="about">
             <About />
           </div>
@@ -62,8 +63,11 @@ function App() {
           <div id="skills">
             <Skills onSkillSelect={handleSkillSelect} selectedSkill={selectedSkill} />
           </div>
-          <div id="projects">
-            <Projects selectedSkill={selectedSkill} onClearFilter={() => handleSkillSelect(null)} />
+          <div id="lab">
+            <TheLab selectedSkill={selectedSkill} onClearFilter={() => handleSkillSelect(null)} />
+          </div>
+          <div id="compass">
+            <Compass />
           </div>
           <div id="contact">
             <AskAnmolAI />

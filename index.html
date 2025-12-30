@@ -8,39 +8,41 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=IBM+Plex+Mono:wght@400;500;600&family=Crimson+Text:wght@400;600;700&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
       :root {
-        /* Neural Network - Light Mode (Default) */
-        --bg: #F8FAFC; /* Ice White */
+        /* Japandi Serenity - Light Mode */
+        --bg: #F5F1E8; /* Warm Cream */
         --surface: #FFFFFF;
-        --text: #0F172A; /* Deep Navy */
-        --muted: #475569; /* Slate Gray */
-        --accent-primary: #0EA5E9; /* Sky Blue */
-        --accent-secondary: #2563EB; /* Vibrant Blue */
-        --accent-tertiary: #10B981; /* Emerald Green */
-        --border: #E2E8F0;
-        --glass: rgba(248, 250, 252, 0.6);
-        --shadow-color: rgba(14, 165, 233, 0.15);
-        --glow-color: rgba(14, 165, 233, 0.4);
-        --text-on-accent: var(--text); /* Use main text color for high contrast on accent backgrounds */
-        --accent-primary-rgb: 14, 165, 233;
+        --text: #3A3A3A; /* Soft Charcoal */
+        --muted: #6B6B6B; /* Medium Gray */
+        --accent-primary: #7C9885; /* Sage Green */
+        --accent-secondary: #C17C74; /* Warm Terracotta */
+        --accent-tertiary: #2D4059; /* Deep Indigo */
+        --border: #D4CFC4;
+        --glass: rgba(245, 241, 232, 0.7);
+        --shadow-color: rgba(124, 152, 133, 0.2);
+        --glow-color: rgba(124, 152, 133, 0.4);
+        --text-on-accent: #FFFFFF;
+        --accent-primary-rgb: 124, 152, 133;
+        --texture-overlay: rgba(212, 207, 196, 0.03);
       }
       html[data-theme="dark"] {
-        /* Gradient Intelligence - Dark Mode */
-        --bg: #000000; /* Pitch Black */
-        --surface: #1F2937; /* Slate 800 for elevation */
-        --text: #F9FAFB; /* Pure White */
-        --muted: #94A3B8; /* Cool Gray */
-        --accent-primary: #06B6D4; /* Electric Cyan */
-        --accent-secondary: #3B82F6; /* Vibrant Blue */
-        --accent-tertiary: #F59E0B; /* Amber */
-        --border: rgba(148, 163, 184, 0.2);
-        --glass: rgba(31, 41, 55, 0.6);
-        --shadow-color: rgba(6, 182, 212, 0.15);
-        --glow-color: rgba(6, 182, 212, 0.5);
+        /* Contemplative Depth - Dark Mode */
+        --bg: #1A1A1A; /* Deep Charcoal */
+        --surface: #2A2A2A; /* Elevated Charcoal */
+        --text: #E8E4DC; /* Warm Off-White */
+        --muted: #9A9A9A; /* Soft Gray */
+        --accent-primary: #8BA896; /* Muted Sage */
+        --accent-secondary: #D4968E; /* Soft Terracotta */
+        --accent-tertiary: #5A7A9B; /* Muted Indigo */
+        --border: rgba(138, 138, 138, 0.2);
+        --glass: rgba(42, 42, 42, 0.7);
+        --shadow-color: rgba(139, 168, 150, 0.25);
+        --glow-color: rgba(139, 168, 150, 0.5);
         --text-on-accent: #FFFFFF;
-        --accent-primary-rgb: 6, 182, 212;
+        --accent-primary-rgb: 139, 168, 150;
+        --texture-overlay: rgba(232, 228, 220, 0.02);
       }
       @keyframes pulse {
         50% {
@@ -70,13 +72,36 @@
         font-family: 'Inter', sans-serif;
         background-color: var(--bg);
         cursor: none;
+        position: relative;
+      }
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+          repeating-linear-gradient(0deg, var(--texture-overlay) 0px, transparent 1px, transparent 2px, var(--texture-overlay) 3px),
+          repeating-linear-gradient(90deg, var(--texture-overlay) 0px, transparent 1px, transparent 2px, var(--texture-overlay) 3px);
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.3;
       }
       body.custom-cursor-disabled, body.custom-cursor-disabled * {
         cursor: auto;
       }
 
       .font-code {
-        font-family: 'Roboto Mono', monospace;
+        font-family: 'IBM Plex Mono', monospace;
+      }
+      
+      .font-serif {
+        font-family: 'Lora', serif;
+      }
+      
+      .font-display {
+        font-family: 'Crimson Text', serif;
       }
 
       *:not(body.custom-cursor-disabled *) {
@@ -132,32 +157,32 @@
 
       /* Gradient Text & BG */
       .text-gradient {
-        background: linear-gradient(120deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+        background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
         text-fill-color: transparent;
       }
       .bg-gradient-accent {
-        background: linear-gradient(120deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+        background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 50%, var(--accent-tertiary) 100%);
         background-size: 200% 200%;
-        animation: gradient-shift 4s ease infinite;
+        animation: gradient-shift 6s ease infinite;
       }
 
       /* Interaction States */
       .interactive-card {
-        transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
       }
       .interactive-card:hover {
         border-color: var(--accent-primary);
-        box-shadow: 0 0 15px var(--glow-color);
-        transform: translateY(-4px);
+        box-shadow: 0 4px 20px var(--shadow-color);
+        transform: translateY(-2px);
       }
       .interactive-card:hover .card-hover-text {
         color: var(--accent-primary);
       }
       .card-hover-text {
-        transition: color 0.3s ease;
+        transition: color 0.4s ease;
       }
       
       /* On-scroll animations */
